@@ -191,9 +191,7 @@ time_transform = DateTimeCyclicEncoder()
 
 
 class MultiInputDataset(torch.utils.data.Dataset):
-    def __init__(
-        self, images, saa, sza, targets=None, transform=None
-    ):
+    def __init__(self, images, saa, sza, targets=None, transform=None):
         self.images = images
         self.saa = saa
         self.sza = sza
@@ -332,12 +330,21 @@ def error_plot(best_val_outputs, best_val_labels, path_folder):
 
 
 def plot_save_loss(
-    best_val_outputs, best_val_labels, train_losses, val_losses, path_folder,saving=False
+    best_val_outputs,
+    best_val_labels,
+    train_losses,
+    val_losses,
+    path_folder,
+    saving=False,
 ):
     # After training, save only the best validation outputs and labels
     if saving:
-        np.save(os.path.join(path_folder, "best_validation_outputs.npy"), best_val_outputs)
-        np.save(os.path.join(path_folder, "best_validation_labels.npy"), best_val_labels)
+        np.save(
+            os.path.join(path_folder, "best_validation_outputs.npy"), best_val_outputs
+        )
+        np.save(
+            os.path.join(path_folder, "best_validation_labels.npy"), best_val_labels
+        )
 
     num_epochs = len(train_losses)
     # Plotting the training and validation losses
@@ -348,9 +355,12 @@ def plot_save_loss(
     plt.ylabel("Loss")
     text_str = f"num_epochs = {num_epochs}, train loss = {train_losses[-1]:.2f}, validation loss = {val_losses[-1]:.2f}"
     plt.text(
-    0.05, 0.05, text_str,
-    ha="left", va="bottom", 
-        transform=plt.gca().transAxes  # Ensures the coordinates are relative to the axes (0 to 1 range)
+        0.05,
+        0.05,
+        text_str,
+        ha="left",
+        va="bottom",
+        transform=plt.gca().transAxes,  # Ensures the coordinates are relative to the axes (0 to 1 range)
     )
     plt.title("Training and Validation Loss Over Epochs")
     plt.legend()
@@ -361,3 +371,9 @@ def plot_save_loss(
 def MSE(y_true, y_pred):
     print(np.mean((y_true - y_pred) ** 2), "= MSE after run")
     return np.mean((y_true - y_pred) ** 2)
+
+
+def calculate_accuracy(y_pred, y_true):
+    accuracy = np.mean(np.abs(y_pred - y_true) < 1)
+    print(f"Accuracy: {accuracy:.2f}")
+    return accuracy

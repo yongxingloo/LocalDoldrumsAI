@@ -18,7 +18,7 @@ from func import *
 from impl import *
 from MultiInputModel import *
 
-experiment_name = "GS"
+experiment_name = "Classification"
 """Network Parameters"""
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -26,18 +26,22 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 image_height = 27
 image_width = 27
 in_channels = 2  # Number of channels in the input image (C01 and C03)
-num_numerical_inputs = 2 # Number of numerical inputs (lat, lon, hour(sin), hour(cos), day(sin), day(cos))
-num_epochs = 800
+num_numerical_inputs = (
+    2  # Number of numerical inputs (lat, lon, hour(sin), hour(cos), day(sin), day(cos))
+)
+num_epochs = 10
 
 
 # IN GRIDSEARCH
 
-criterion = nn.MSELoss()  # "MSELoss", "L1Loss"
+criterion = (
+    nn.BCEWithLogitsLoss()
+)  # "MSELoss", "L1Loss" "BCEWithLogitsLoss" "CrossEntropyLoss"
 optimizer_choice = "Adam"  # "Adam", "SGD", "RMSprop"
 
 batch_size = 512
 lr = 0.001
-weight_decay = 0.001 # L2 regularization
+weight_decay = 0.001  # L2 regularization
 
 features_numerical = [4, 8, 16]
 features_cnn = [32, 64, 128]
@@ -86,21 +90,41 @@ print(
     batch_size,
 )
 
-"""Training"""
+# Load the data
 
-images_dual_channel = np.load("../../Subset + Split/train-validation/train_images.npy")
-lat = np.load("../../Subset + Split/train-validation/train_lat.npy")
-lon = np.load("../../Subset + Split/train-validation/train_lon.npy")
-time = np.load("../../Subset + Split/train-validation/train_time.npy")
-target = np.load("../../Subset + Split/train-validation/train_target.npy")
+images_dual_channel = np.load(
+    "../local_data/classification/classifier_train-validation/train_images_classification.npy"
+)
+lat = np.load(
+    "../local_data/classification/classifier_train-validation/train_lat_classification.npy"
+)
+lon = np.load(
+    "../local_data/classification/classifier_train-validation/train_lon_classification.npy"
+)
+time = np.load(
+    "../local_data/classification/classifier_train-validation/train_time_classification.npy"
+)
+target = np.load(
+    "../local_data/classification/classifier_train-validation/train_target_classification.npy"
+)
 
 # Load the test data
 
-images_dual_channel_test = np.load("../../Subset + Split/test/test_images.npy")
-lat_test = np.load("../../Subset + Split/test/test_lat.npy")
-lon_test = np.load("../../Subset + Split/test/test_lon.npy")
-time_test = np.load("../../Subset + Split/test/test_time.npy")
-target_test = np.load("../../Subset + Split/test/test_target.npy")
+images_dual_channel_test = np.load(
+    "../local_data/classification/classifier_test/test_images_classification.npy"
+)
+lat_test = np.load(
+    "../local_data/classification/classifier_test/test_lat_classification.npy"
+)
+lon_test = np.load(
+    "../local_data/classification/classifier_test/test_lon_classification.npy"
+)
+time_test = np.load(
+    "../local_data/classification/classifier_test/test_time_classification.npy"
+)
+target_test = np.load(
+    "../local_data/classification/classifier_test/test_target_classification.npy"
+)
 
 # Prepare the data (Expermiental)
 
@@ -112,7 +136,7 @@ if solar_angle_transform:
     sza = solar_zenith_angle(lat, lon, time)
 
 if Normalization:
-    images_dual_channel, target, image_mean, image_std, target_mean, target_std = (
+    images_dual_channel, _, image_mean, image_std, target_mean, target_std = (
         normalization_mean_std(images_dual_channel, target)
     )
     saa, sza, saa_mean, saa_std, sza_mean, sza_std = normalization_solar_angles(
@@ -123,8 +147,11 @@ if Normalization:
 # Bring the data into the expected format
 
 dataset = MultiInputDataset(
-    images_dual_channel, saa, sza, target, transform=None, 
-    
+    images_dual_channel,
+    saa,
+    sza,
+    target,
+    transform=None,
 )
 dataloader = DataLoader(dataset, batch_size, shuffle=True, drop_last=True)
 
@@ -189,7 +216,7 @@ plot_save_loss(
 saa_test = solar_azimuth_angle(lat_test, lon_test, time_test)
 sza_test = solar_zenith_angle(lat_test, lon_test, time_test)
 
-images_dual_channel_test_norm, target_test_norm = normalization_mean_std_test(
+images_dual_channel_test_norm, _ = normalization_mean_std_test(
     images_dual_channel_test,
     target_test,
     image_mean,
@@ -206,19 +233,17 @@ test_dataset = MultiInputDataset(
     images_dual_channel_test_norm,
     saa_test,
     sza_test,
-    target_test_norm,
+    target_test,
     transform=None,
 )
 test_loader = DataLoader(test_dataset, batch_size, shuffle=False)
 
 test_output, test_loss = test_model(model, test_loader, criterion, device)
 
-error_plot(test_output, target_test_norm, path_folder)
+accuracy = calculate_accuracy(test_output, target_test)
 
 # Rescale the output and target for minmax
 
-test_output = test_output * target_std + target_mean
+# test_output = test_output * target_std + target_mean
 
 np.save(os.path.join(path_folder, "test_output.npy"), test_output)
-
-MSE(test_output, target_test)

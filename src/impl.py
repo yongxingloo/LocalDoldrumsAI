@@ -77,6 +77,7 @@ def train_model(
         optimizer = optim.SGD(model.parameters(), lr=lr, weight_decay=weight_decay)
     elif optimizer_choice == "RMSprop":
         optimizer = optim.RMSprop(model.parameters(), lr=lr, weight_decay=weight_decay)
+            
     else:
         raise ValueError("Invalid optimizer choice. Please choose 'Adam' or 'SGD'.")
 

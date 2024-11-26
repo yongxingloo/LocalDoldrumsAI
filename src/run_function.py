@@ -2,6 +2,9 @@
 @author: Yongxing Loo
 """
 
+# Difference with regression :
+# - The target is not normalised
+
 import datetime
 import logging
 import os
@@ -19,19 +22,39 @@ from func import *
 from impl import *
 from MultiInputModel import *
 
-images_dual_channel = np.load("../../Subset + Split/train-validation/train_images.npy")
-lat = np.load("../../Subset + Split/train-validation/train_lat.npy")
-lon = np.load("../../Subset + Split/train-validation/train_lon.npy")
-time = np.load("../../Subset + Split/train-validation/train_time.npy")
-target = np.load("../../Subset + Split/train-validation/train_target.npy")
+images_dual_channel = np.load(
+    "../local_data/classification/classifier_train-validation/train_images_classification.npy"
+)
+lat = np.load(
+    "../local_data/classification/classifier_train-validation/train_lat_classification.npy"
+)
+lon = np.load(
+    "../local_data/classification/classifier_train-validation/train_lon_classification.npy"
+)
+time = np.load(
+    "../local_data/classification/classifier_train-validation/train_time_classification.npy"
+)
+target = np.load(
+    "../local_data/classification/classifier_train-validation/train_target_classification.npy"
+)
 
 # Load the test data
 
-images_dual_channel_test = np.load("../../Subset + Split/test/test_images.npy")
-lat_test = np.load("../../Subset + Split/test/test_lat.npy")
-lon_test = np.load("../../Subset + Split/test/test_lon.npy")
-time_test = np.load("../../Subset + Split/test/test_time.npy")
-target_test = np.load("../../Subset + Split/test/test_target.npy")
+images_dual_channel_test = np.load(
+    "../local_data/classification/classifier_test/test_images_classification.npy"
+)
+lat_test = np.load(
+    "../local_data/classification/classifier_test/test_lat_classification.npy"
+)
+lon_test = np.load(
+    "../local_data/classification/classifier_test/test_lon_classification.npy"
+)
+time_test = np.load(
+    "../local_data/classification/classifier_test/test_time_classification.npy"
+)
+target_test = np.load(
+    "../local_data/classification/classifier_test/test_target_classification.npy"
+)
 
 Normalization = True
 solar_angle_transform = True
@@ -41,8 +64,8 @@ if solar_angle_transform:
     sza = solar_zenith_angle(lat, lon, time)
 
 if Normalization:
-    images_dual_channel, target, image_mean, image_std, target_mean, target_std = (
-        normalization_mean_std(images_dual_channel, target)
+    images_dual_channel, _, image_mean, image_std, _, _ = normalization_mean_std(
+        images_dual_channel, target
     )
     saa, sza, saa_mean, saa_std, sza_mean, sza_std = normalization_solar_angles(
         saa, sza
@@ -73,13 +96,13 @@ train_dataset, val_dataset = random_split(
 saa_test = solar_azimuth_angle(lat_test, lon_test, time_test)
 sza_test = solar_zenith_angle(lat_test, lon_test, time_test)
 
-images_dual_channel_test_norm, target_test_norm = normalization_mean_std_test(
+images_dual_channel_test_norm, _ = normalization_mean_std_test(
     images_dual_channel_test,
     target_test,
     image_mean,
     image_std,
-    target_mean,
-    target_std,
+    _,
+    _,
 )
 saa_test, sza_test = normalization_solar_angles_test(
     saa_test, sza_test, saa_mean, saa_std, sza_mean, sza_std
@@ -89,7 +112,7 @@ test_dataset = MultiInputDataset(
     images_dual_channel_test_norm,
     saa_test,
     sza_test,
-    target_test_norm,
+    target_test,
     transform=None,
 )
 
@@ -116,7 +139,7 @@ def MultiInputModelTraining(
     stride,
     num_epochs,
 ):
-    experiment_name = "GS"
+    experiment_name = "Classification"
     """Network Parameters"""
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -218,7 +241,7 @@ def MultiInputModelTraining(
 
     # Rescale the output and target for minmax
 
-    test_output = test_output * target_std + target_mean
+    # test_output = test_output * target_std + target_mean
 
     np.save(os.path.join(path_folder, "test_output.npy"), test_output)
 
