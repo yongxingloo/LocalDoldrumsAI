@@ -1,0 +1,293 @@
+2024-11-26 12:07:31,757   INFO   Training starts!
+2024-11-26 12:07:32,355   INFO   
+Epoch:[1]	 Train loss=1.598234117031.
+Epoch:[1]	 Valid loss=1.138144135475.
+
+2024-11-26 12:07:32,927   INFO   
+Epoch:[2]	 Train loss=1.080196559429.
+Epoch:[2]	 Valid loss=1.121572732925.
+
+2024-11-26 12:07:33,494   INFO   
+Epoch:[3]	 Train loss=1.058862149715.
+Epoch:[3]	 Valid loss=1.050179362297.
+
+2024-11-26 12:07:34,082   INFO   
+Epoch:[4]	 Train loss=0.954445183277.
+Epoch:[4]	 Valid loss=0.882939696312.
+
+2024-11-26 12:07:34,702   INFO   
+Epoch:[5]	 Train loss=0.891961932182.
+Epoch:[5]	 Valid loss=1.090185523033.
+
+2024-11-26 12:07:35,276   INFO   
+Epoch:[6]	 Train loss=0.971631914377.
+Epoch:[6]	 Valid loss=0.874448239803.
+
+2024-11-26 12:07:35,871   INFO   
+Epoch:[7]	 Train loss=0.814921855927.
+Epoch:[7]	 Valid loss=0.851834535599.
+
+2024-11-26 12:07:36,437   INFO   
+Epoch:[8]	 Train loss=0.794779509306.
+Epoch:[8]	 Valid loss=0.847123742104.
+
+2024-11-26 12:07:37,039   INFO   
+Epoch:[9]	 Train loss=0.786880433559.
+Epoch:[9]	 Valid loss=0.844260394573.
+
+2024-11-26 12:07:37,724   INFO   
+Epoch:[10]	 Train loss=0.782647937536.
+Epoch:[10]	 Valid loss=0.841577768326.
+
+2024-11-26 12:07:38,423   INFO   
+Epoch:[11]	 Train loss=0.776160895824.
+Epoch:[11]	 Valid loss=0.838057219982.
+
+2024-11-26 12:07:39,376   INFO   
+Epoch:[12]	 Train loss=0.766804575920.
+Epoch:[12]	 Valid loss=0.837554693222.
+
+2024-11-26 12:07:40,416   INFO   
+Epoch:[13]	 Train loss=0.766511946917.
+Epoch:[13]	 Valid loss=0.836295068264.
+
+2024-11-26 12:07:41,152   INFO   
+Epoch:[14]	 Train loss=0.758018165827.
+Epoch:[14]	 Valid loss=0.839043021202.
+
+2024-11-26 12:07:41,898   INFO   
+Epoch:[15]	 Train loss=0.764651030302.
+Epoch:[15]	 Valid loss=0.847235500813.
+
+2024-11-26 12:07:42,659   INFO   
+Epoch:[16]	 Train loss=0.755154073238.
+Epoch:[16]	 Valid loss=0.843283772469.
+
+2024-11-26 12:07:43,398   INFO   
+Epoch:[17]	 Train loss=0.757916212082.
+Epoch:[17]	 Valid loss=0.837903976440.
+
+2024-11-26 12:07:44,148   INFO   
+Epoch:[18]	 Train loss=0.736779570580.
+Epoch:[18]	 Valid loss=0.832820713520.
+
+2024-11-26 12:07:45,290   INFO   
+Epoch:[19]	 Train loss=0.750469356775.
+Epoch:[19]	 Valid loss=0.832500219345.
+
+2024-11-26 12:07:46,159   INFO   
+Epoch:[20]	 Train loss=0.729043662548.
+Epoch:[20]	 Valid loss=0.827748119831.
+
+2024-11-26 12:07:47,001   INFO   
+Epoch:[21]	 Train loss=0.740068733692.
+Epoch:[21]	 Valid loss=0.830510914326.
+
+2024-11-26 12:07:47,779   INFO   
+Epoch:[22]	 Train loss=0.736241042614.
+Epoch:[22]	 Valid loss=0.842626035213.
+
+2024-11-26 12:07:48,509   INFO   
+Epoch:[23]	 Train loss=0.754509389400.
+Epoch:[23]	 Valid loss=0.835733652115.
+
+2024-11-26 12:07:49,428   INFO   
+Epoch:[24]	 Train loss=0.722613573074.
+Epoch:[24]	 Valid loss=0.828467488289.
+
+2024-11-26 12:07:50,260   INFO   
+Epoch:[25]	 Train loss=0.741059631109.
+Epoch:[25]	 Valid loss=0.827205896378.
+
+2024-11-26 12:07:51,066   INFO   
+Epoch:[26]	 Train loss=0.710715532303.
+Epoch:[26]	 Valid loss=0.815031945705.
+
+2024-11-26 12:07:51,876   INFO   
+Epoch:[27]	 Train loss=0.719076246023.
+Epoch:[27]	 Valid loss=0.812770903111.
+
+2024-11-26 12:07:52,683   INFO   
+Epoch:[28]	 Train loss=0.710193872452.
+Epoch:[28]	 Valid loss=0.810466408730.
+
+2024-11-26 12:07:53,673   INFO   
+Epoch:[29]	 Train loss=0.710212022066.
+Epoch:[29]	 Valid loss=0.818298339844.
+
+2024-11-26 12:07:54,464   INFO   
+Epoch:[30]	 Train loss=0.735007911921.
+Epoch:[30]	 Valid loss=0.867751061916.
+
+2024-11-26 12:07:55,235   INFO   
+Epoch:[31]	 Train loss=0.771254748106.
+Epoch:[31]	 Valid loss=0.805209875107.
+
+2024-11-26 12:07:56,097   INFO   
+Epoch:[32]	 Train loss=0.697348386049.
+Epoch:[32]	 Valid loss=0.808577597141.
+
+2024-11-26 12:07:56,931   INFO   
+Epoch:[33]	 Train loss=0.710035264492.
+Epoch:[33]	 Valid loss=0.851770460606.
+
+2024-11-26 12:07:57,891   INFO   
+Epoch:[34]	 Train loss=0.747423529625.
+Epoch:[34]	 Valid loss=0.920455574989.
+
+2024-11-26 12:07:58,730   INFO   
+Epoch:[35]	 Train loss=0.773608773947.
+Epoch:[35]	 Valid loss=0.796248137951.
+
+2024-11-26 12:07:59,524   INFO   
+Epoch:[36]	 Train loss=0.686714857817.
+Epoch:[36]	 Valid loss=0.792613148689.
+
+2024-11-26 12:08:00,296   INFO   
+Epoch:[37]	 Train loss=0.685817956924.
+Epoch:[37]	 Valid loss=0.794193804264.
+
+2024-11-26 12:08:01,057   INFO   
+Epoch:[38]	 Train loss=0.691513478756.
+Epoch:[38]	 Valid loss=0.801518023014.
+
+2024-11-26 12:08:01,821   INFO   
+Epoch:[39]	 Train loss=0.701446026564.
+Epoch:[39]	 Valid loss=0.806055903435.
+
+2024-11-26 12:08:02,576   INFO   
+Epoch:[40]	 Train loss=0.696490585804.
+Epoch:[40]	 Valid loss=0.802927911282.
+
+2024-11-26 12:08:03,529   INFO   
+Epoch:[41]	 Train loss=0.694442987442.
+Epoch:[41]	 Valid loss=0.797908425331.
+
+2024-11-26 12:08:04,481   INFO   
+Epoch:[42]	 Train loss=0.683054238558.
+Epoch:[42]	 Valid loss=0.798412501812.
+
+2024-11-26 12:08:05,292   INFO   
+Epoch:[43]	 Train loss=0.692799478769.
+Epoch:[43]	 Valid loss=0.798713028431.
+
+2024-11-26 12:08:06,086   INFO   
+Epoch:[44]	 Train loss=0.681283265352.
+Epoch:[44]	 Valid loss=0.798680067062.
+
+2024-11-26 12:08:06,908   INFO   
+Epoch:[45]	 Train loss=0.691541701555.
+Epoch:[45]	 Valid loss=0.795558512211.
+
+2024-11-26 12:08:07,799   INFO   
+Epoch:[46]	 Train loss=0.674607783556.
+Epoch:[46]	 Valid loss=0.796046555042.
+
+2024-11-26 12:08:08,604   INFO   
+Epoch:[47]	 Train loss=0.689159899950.
+Epoch:[47]	 Valid loss=0.792540669441.
+
+2024-11-26 12:08:09,434   INFO   
+Epoch:[48]	 Train loss=0.667271882296.
+Epoch:[48]	 Valid loss=0.794972002506.
+
+2024-11-26 12:08:10,340   INFO   
+Epoch:[49]	 Train loss=0.687681257725.
+Epoch:[49]	 Valid loss=0.791367292404.
+
+2024-11-26 12:08:11,176   INFO   
+Epoch:[50]	 Train loss=0.663474708796.
+Epoch:[50]	 Valid loss=0.792382538319.
+
+2024-11-26 12:08:12,006   INFO   
+Epoch:[51]	 Train loss=0.683144658804.
+Epoch:[51]	 Valid loss=0.790765702724.
+
+2024-11-26 12:08:12,848   INFO   
+Epoch:[52]	 Train loss=0.663937956095.
+Epoch:[52]	 Valid loss=0.792553305626.
+
+2024-11-26 12:08:13,672   INFO   
+Epoch:[53]	 Train loss=0.681490451097.
+Epoch:[53]	 Valid loss=0.787415266037.
+
+2024-11-26 12:08:14,609   INFO   
+Epoch:[54]	 Train loss=0.657984077930.
+Epoch:[54]	 Valid loss=0.786905169487.
+
+2024-11-26 12:08:15,531   INFO   
+Epoch:[55]	 Train loss=0.672431677580.
+Epoch:[55]	 Valid loss=0.785192489624.
+
+2024-11-26 12:08:16,344   INFO   
+Epoch:[56]	 Train loss=0.656347751617.
+Epoch:[56]	 Valid loss=0.787389338017.
+
+2024-11-26 12:08:17,148   INFO   
+Epoch:[57]	 Train loss=0.671497970819.
+Epoch:[57]	 Valid loss=0.786886394024.
+
+2024-11-26 12:08:17,959   INFO   
+Epoch:[58]	 Train loss=0.655749261379.
+Epoch:[58]	 Valid loss=0.788128495216.
+
+2024-11-26 12:08:18,768   INFO   
+Epoch:[59]	 Train loss=0.670222491026.
+Epoch:[59]	 Valid loss=0.776774346828.
+
+2024-11-26 12:08:19,710   INFO   
+Epoch:[60]	 Train loss=0.641149312258.
+Epoch:[60]	 Valid loss=0.773334562778.
+
+2024-11-26 12:08:20,644   INFO   
+Epoch:[61]	 Train loss=0.654310107231.
+Epoch:[61]	 Valid loss=0.775121271610.
+
+2024-11-26 12:08:21,614   INFO   
+Epoch:[62]	 Train loss=0.644398629665.
+Epoch:[62]	 Valid loss=0.783498704433.
+
+2024-11-26 12:08:22,463   INFO   
+Epoch:[63]	 Train loss=0.661880612373.
+Epoch:[63]	 Valid loss=0.788745105267.
+
+2024-11-26 12:08:23,288   INFO   
+Epoch:[64]	 Train loss=0.655352383852.
+Epoch:[64]	 Valid loss=0.780794799328.
+
+2024-11-26 12:08:24,131   INFO   
+Epoch:[65]	 Train loss=0.653769046068.
+Epoch:[65]	 Valid loss=0.769392371178.
+
+2024-11-26 12:08:24,968   INFO   
+Epoch:[66]	 Train loss=0.634981602430.
+Epoch:[66]	 Valid loss=0.764035522938.
+
+2024-11-26 12:08:25,850   INFO   
+Epoch:[67]	 Train loss=0.635129749775.
+Epoch:[67]	 Valid loss=0.763279378414.
+
+2024-11-26 12:08:26,675   INFO   
+Epoch:[68]	 Train loss=0.632132083178.
+Epoch:[68]	 Valid loss=0.773410677910.
+
+2024-11-26 12:08:27,497   INFO   
+Epoch:[69]	 Train loss=0.645034253597.
+Epoch:[69]	 Valid loss=0.800633728504.
+
+2024-11-26 12:08:28,303   INFO   
+Epoch:[70]	 Train loss=0.669609308243.
+Epoch:[70]	 Valid loss=0.772258698940.
+
+2024-11-26 12:08:29,120   INFO   
+Epoch:[71]	 Train loss=0.631123334169.
+Epoch:[71]	 Valid loss=0.755251049995.
+
+2024-11-26 12:08:29,949   INFO   
+Epoch:[72]	 Train loss=0.624208420515.
+Epoch:[72]	 Valid loss=0.746721446514.
+
+2024-11-26 12:08:30,829   INFO   
+Epoch:[73]	 Train loss=0.611723423004.
+Epoch:[73]	 Valid loss=0.740393459797.
+
