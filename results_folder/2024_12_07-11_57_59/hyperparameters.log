@@ -1,0 +1,14 @@
+2024-12-07 11:57:59,839   INFO   Hyperparameters
+2024-12-07 11:57:59,839   INFO   Batch size: 128
+2024-12-07 11:57:59,839   INFO   Learning rate: 0.01
+2024-12-07 11:57:59,839   INFO   Weight decay: 0.0001
+2024-12-07 11:57:59,839   INFO   Optimizer choice: Adam
+2024-12-07 11:57:59,839   INFO   Features numerical: [4, 8, 16]
+2024-12-07 11:57:59,839   INFO   Features CNN: [128, 64, 32]
+2024-12-07 11:57:59,839   INFO   Kernel size: 3
+2024-12-07 11:57:59,840   INFO   Activation numerical: Tanh
+2024-12-07 11:57:59,840   INFO   Activation CNN: ReLU
+2024-12-07 11:57:59,840   INFO   Activation final: None
+2024-12-07 11:57:59,840   INFO   Criterion: MSE
+2024-12-07 11:57:59,840   INFO   Stride: 1
+2024-12-07 11:57:59,840   INFO   Number of epochs: 2

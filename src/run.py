@@ -96,11 +96,19 @@ target = np.load("../../Subset + Split/train-validation/train_target.npy")
 
 # Load the test data
 
-images_dual_channel_test = np.load("../../Subset + Split/test/test_images.npy")
-lat_test = np.load("../../Subset + Split/test/test_lat.npy")
-lon_test = np.load("../../Subset + Split/test/test_lon.npy")
-time_test = np.load("../../Subset + Split/test/test_time.npy")
-target_test = np.load("../../Subset + Split/test/test_target.npy")
+#images_dual_channel_test = np.load("../../Subset + Split/test/test_images.npy")
+#lat_test = np.load("../../Subset + Split/test/test_lat.npy")
+#lon_test = np.load("../../Subset + Split/test/test_lon.npy")
+#time_test = np.load("../../Subset + Split/test/test_time.npy")
+#target_test = np.load("../../Subset + Split/test/test_target.npy")
+
+# Alternative test data for scalability experiment 
+
+images_dual_channel_test = np.load('../../Subset + Split/test_scalability/test_images.npy')
+lat_test = np.load('../../Subset + Split/test_scalability/test_lat.npy')
+lon_test = np.load('../../Subset + Split/test_scalability/test_lon.npy')
+time_test = np.load('../../Subset + Split/test_scalability/test_time.npy')
+target_test = np.load('../../Subset + Split/test_scalability/test_target.npy')
 
 # Prepare the data (Expermiental)
 
